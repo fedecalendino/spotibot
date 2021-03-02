@@ -7,21 +7,29 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Artist',
+            name="Artist",
             fields=[
-                ('id', models.CharField(editable=False, max_length=100, primary_key=True, serialize=False, unique=True)),
-                ('uri', models.CharField(editable=False, max_length=100, unique=True)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True, null=True)),
-                ('name', models.CharField(max_length=20)),
+                (
+                    "id",
+                    models.CharField(
+                        editable=False,
+                        max_length=100,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                ("uri", models.CharField(editable=False, max_length=100, unique=True)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True, null=True)),
+                ("name", models.CharField(max_length=20)),
             ],
             options={
-                'db_table': 'artists',
+                "db_table": "artists",
             },
         ),
     ]

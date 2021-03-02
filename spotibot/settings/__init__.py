@@ -38,9 +38,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
 ]
 
-SPOTIBOT_APPS = [
-    "spotibot.apps.artist"
-]
+SPOTIBOT_APPS = ["spotibot.apps.artist"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SPOTIBOT_APPS
 
