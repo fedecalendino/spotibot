@@ -11,9 +11,9 @@
 * ~~Add song parser method to parse spotify response and save everything as it goes.~~  
 * Add heartbeat app (🌿 yahaha).
 * Add permission_class for api_key param.  
-* Add spotify integration.
-* Add jobs app.
-* Add job for history playlist update and saving. (every 30 minutes).
+* ~~Add spotify integration.~~
+* ~~Add jobs app.~~
+* ~~Add job for history playlist update and saving.~~ (every 30 minutes).
 * Add job for discover playlist update. (every hour)
 * Add job for weeklys playlist update. (every sunday at 23:59)
 * ~~Add service to inject history elements.~~
