@@ -11,12 +11,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 SECRET_KEY = "%q4mbg=fet*^adhty1q$-bp!9&4+y!9+c)0u*s=_ury*qg#11f"
 
-SPOTIPY = {
-    "USERNAME": None, 
-    "CLIENT_ID": None,
-    "CLIENT_SECRET": None,
+SPOTIFY = {
+    "USERNAME": "",
+    "CLIENT_ID": "",
+    "CLIENT_SECRET": "",
+    "PLAYLISTS": {
+        "HISTORY": "",
+    },
 }
-
 
 DATABASES = {
     "default": {
@@ -102,3 +104,5 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+TIMESTAMPS_TIMEZONE = "Europe/Prague"
