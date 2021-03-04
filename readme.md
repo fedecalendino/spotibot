@@ -3,9 +3,10 @@
 
 #### To Do
 
-* Add albums app (link with artist).
-* Add songs app (link with artist and list of features).
-* Add history app (link with song).
+* ~~Add artists app.~~
+* ~~Add albums app (link with artist).~~
+* ~~Add tracks app (link with artist and list of features).~~
+* Add history app (link with tracks).
 * Add heartbeat app (🌿 yahaha).
 * Add permission_class for api_key param.  
 * Add spotify integration.
