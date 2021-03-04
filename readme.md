@@ -6,7 +6,8 @@
 * ~~Add artists app.~~
 * ~~Add albums app (link with artist).~~
 * ~~Add tracks app (link with artist and list of features).~~
-* Add history app (link with tracks).
+* ~~Add history app (link with tracks).~~
+* ~~Add swagger app.~~  
 * Add heartbeat app (🌿 yahaha).
 * Add permission_class for api_key param.  
 * Add spotify integration.
