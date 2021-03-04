@@ -11,7 +11,7 @@ class Artist(BaseModel):
     uri = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
-        return f"{self.name} ({self.id})"
+        return f"{self.name}"
 
     @classmethod
     def parse(cls, data: dict) -> "Artist":

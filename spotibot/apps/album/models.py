@@ -14,7 +14,7 @@ class Album(BaseModel):
     artist = models.ForeignKey(Artist, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return f"{self.name} ({self.id})"
+        return f"{self.name} by {self.artist.name}"
 
     @classmethod
     def parse(cls, data: dict) -> "Album":

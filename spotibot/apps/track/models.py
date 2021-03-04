@@ -20,7 +20,7 @@ class Track(BaseModel):
     features = models.ManyToManyField(Artist, related_name="featured")
 
     def __str__(self):
-        return f"{self.name} ({self.id})"
+        return f"{self.name} by {self.artist.name} ({self.album.name})"
 
     @classmethod
     def parse(cls, data: dict) -> "Track":

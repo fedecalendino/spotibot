@@ -16,16 +16,21 @@ class History(BaseModel):
     track = models.ForeignKey(Track, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return f"{self.track.name} @ {self.played_at}"
+        return f"{self.track} @ {self.played_at}"
 
     @classmethod
     def parse(cls, data: dict) -> "History":
-        history = History(
-            id=str(uuid4()),
-            played_at=data["played_at"],
-            raw=data,
-            track=Track.parse(data["track"]),
-        )
-        history.save()
+        try:
+            history = History.objects.get(
+                played_at=data["played_at"],
+            )
+        except History.DoesNotExist:
+            history = History(
+                id=str(uuid4()),
+                played_at=data["played_at"],
+                raw=data,
+                track=Track.parse(data["track"]),
+            )
+            history.save()
 
         return history
