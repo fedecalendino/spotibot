@@ -9,25 +9,44 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('album', '0001_initial'),
-        ('artist', '0003_auto_20210302_2152'),
+        ("album", "0001_initial"),
+        ("artist", "0003_auto_20210302_2152"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Track',
+            name="Track",
             fields=[
-                ('id', models.CharField(max_length=100, primary_key=True, serialize=False, unique=True)),
-                ('uri', models.CharField(max_length=100, unique=True)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True, null=True)),
-                ('title', models.CharField(max_length=100)),
-                ('album', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='album.album')),
-                ('artist', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='artist.artist')),
-                ('features', models.ManyToManyField(related_name='featured', to='artist.Artist')),
+                (
+                    "id",
+                    models.CharField(
+                        max_length=100, primary_key=True, serialize=False, unique=True
+                    ),
+                ),
+                ("uri", models.CharField(max_length=100, unique=True)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True, null=True)),
+                ("title", models.CharField(max_length=100)),
+                (
+                    "album",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING, to="album.album"
+                    ),
+                ),
+                (
+                    "artist",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        to="artist.artist",
+                    ),
+                ),
+                (
+                    "features",
+                    models.ManyToManyField(related_name="featured", to="artist.Artist"),
+                ),
             ],
             options={
-                'db_table': 'models_tracks',
+                "db_table": "models_tracks",
             },
         ),
     ]

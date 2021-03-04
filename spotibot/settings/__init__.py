@@ -35,12 +35,14 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "drf_yasg",
     "rest_framework",
 ]
 
 SPOTIBOT_APPS = [
     "spotibot.apps.album",
     "spotibot.apps.artist",
+    "spotibot.apps.history",
     "spotibot.apps.track",
 ]
 
