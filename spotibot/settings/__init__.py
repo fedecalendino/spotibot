@@ -41,6 +41,7 @@ THIRD_PARTY_APPS = [
 SPOTIBOT_APPS = [
     "spotibot.apps.album",
     "spotibot.apps.artist",
+    "spotibot.apps.track",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SPOTIBOT_APPS
