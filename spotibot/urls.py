@@ -8,5 +8,6 @@ urlpatterns = [
     path("api/albums/", include("spotibot.apps.album.urls")),
     path("api/artists/", include("spotibot.apps.artist.urls")),
     path("api/history/", include("spotibot.apps.history.urls")),
+    path("api/jobs/", include("spotibot.apps.job.urls")),
     path("api/tracks/", include("spotibot.apps.track.urls")),
 ]

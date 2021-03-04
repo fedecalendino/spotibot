@@ -72,7 +72,7 @@ class HistoryParseView(CreateAPIView):
             artist=artist,
             album=album,
         )
-        
+
         for feature in features:
             track.features.add(feature)
 

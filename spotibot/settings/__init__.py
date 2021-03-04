@@ -11,6 +11,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 SECRET_KEY = "%q4mbg=fet*^adhty1q$-bp!9&4+y!9+c)0u*s=_ury*qg#11f"
 
+SPOTIPY = {
+    "USERNAME": None, 
+    "CLIENT_ID": None,
+    "CLIENT_SECRET": None,
+}
+
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
@@ -20,6 +27,14 @@ DATABASES = {
         "HOST": "localhost",
         "PORT": 5432,
     }
+}
+
+SWAGGER_SETTINGS = {
+    "DEEP_LINKING": True,
+    "DEFAULT_MODEL_RENDERING": "example",
+    "DOC_EXPANSION": "none",
+    "TAGS_SORTER": "alpha",
+    "USE_SESSION_AUTH": False,
 }
 
 
@@ -43,6 +58,7 @@ SPOTIBOT_APPS = [
     "spotibot.apps.album",
     "spotibot.apps.artist",
     "spotibot.apps.history",
+    "spotibot.apps.job",
     "spotibot.apps.track",
 ]
 
