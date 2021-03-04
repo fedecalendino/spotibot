@@ -21,3 +21,22 @@ class Track(BaseModel):
 
     def __str__(self):
         return f"{self.name} ({self.id})"
+
+    @classmethod
+    def parse(cls, data: dict) -> "Track":
+        artist, *features = data["artists"]
+
+        track, _ = Track.objects.all().get_or_create(
+            id=data["id"],
+            name=data["name"],
+            uri=data["uri"],
+            artist=Artist.parse(artist),
+            album=Album.parse(data["album"]),
+        )
+
+        for feature in features:
+            track.features.add(Artist.parse(feature))
+
+        track.save()
+
+        return track

@@ -6,11 +6,7 @@ class BaseModel(models.Model):
         abstract = True
 
     # Fields
-    id = models.CharField(
-        max_length=100,
-        primary_key=True,
-        unique=True
-    )
+    id = models.CharField(max_length=100, primary_key=True, unique=True)
 
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
