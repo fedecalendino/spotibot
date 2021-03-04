@@ -8,8 +8,13 @@ class Album(BaseModel):
     class Meta:
         db_table = "models_albums"
 
-    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    uri = models.CharField(
+        max_length=100,
+        unique=True,
+    )
+
     artist = models.ForeignKey(Artist, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return f"{self.title} ({self.id})"
+        return f"{self.name} ({self.id})"

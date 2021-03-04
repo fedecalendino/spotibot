@@ -9,12 +9,7 @@ class BaseModel(models.Model):
     id = models.CharField(
         max_length=100,
         primary_key=True,
-        unique=True,
-    )
-
-    uri = models.CharField(
-        max_length=100,
-        unique=True,
+        unique=True
     )
 
     created_at = models.DateTimeField(auto_now_add=True, editable=False)

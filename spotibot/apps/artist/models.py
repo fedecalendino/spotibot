@@ -8,6 +8,10 @@ class Artist(BaseModel):
         db_table = "models_artists"
 
     name = models.CharField(max_length=100)
+    uri = models.CharField(
+        max_length=100,
+        unique=True,
+    )
 
     def __str__(self):
         return f"{self.name} ({self.id})"
