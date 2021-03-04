@@ -7,7 +7,8 @@
 * ~~Add albums app (link with artist).~~
 * ~~Add tracks app (link with artist and list of features).~~
 * ~~Add history app (link with tracks).~~
-* ~~Add swagger app.~~  
+* ~~Add swagger app.~~
+* ~~Add song parser method to parse spotify response and save everything as it goes.~~  
 * Add heartbeat app (🌿 yahaha).
 * Add permission_class for api_key param.  
 * Add spotify integration.
@@ -23,3 +24,14 @@
 * Add settings for prod.
 * Add cron jobs for jobs.
 * Add fail2ban config.
+
+
+
+History Job:
+  * Read last 50 songs played, save them to database and store them into history playlist.
+
+Discover Job:
+  * Get last 10 saved songs, get top 3 from each album and put all into the discover playlist.
+
+Weeklys 2021 Job:
+  * Get most played song from each week, save each top 3 into the weeklys playlist.
