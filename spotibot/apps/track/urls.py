@@ -9,7 +9,7 @@ urlpatterns = [
         name="track_collection_view",
     ),
     path(
-        route="<str:track_id>",
+        route="<str:pk>",
         view=TrackEntityView.as_view(),
         name="track_entity_view",
     ),

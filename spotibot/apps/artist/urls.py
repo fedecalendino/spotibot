@@ -9,7 +9,7 @@ urlpatterns = [
         name="artist_collection_view",
     ),
     path(
-        route="<str:artist_id>",
+        route="<str:pk>",
         view=ArtistEntityView.as_view(),
         name="artist_entity_view",
     ),
