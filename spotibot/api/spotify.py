@@ -31,14 +31,8 @@ def get_saved_tracks(limit: int = 10):
 
 
 def clear_playlist(playlist_id: str):
-    client.playlist_replace_items(
-        playlist_id=playlist_id,
-        items=[]
-    )
+    client.playlist_replace_items(playlist_id=playlist_id, items=[])
 
 
 def update_playlist(playlist_id: str, items: list[str]):
-    client.playlist_add_items(
-        playlist_id=playlist_id,
-        items=items
-    )
+    client.playlist_add_items(playlist_id=playlist_id, items=items)
