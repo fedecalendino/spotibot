@@ -1,7 +1,7 @@
 from django.db import models
 
-from spotibot.apps.base.models import BaseModel
 from spotibot.apps.artist.models import Artist
+from spotibot.apps.base.models import BaseModel
 
 
 class Album(BaseModel):

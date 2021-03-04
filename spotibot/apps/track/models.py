@@ -1,8 +1,8 @@
 from django.db import models
 
-from spotibot.apps.base.models import BaseModel
 from spotibot.apps.album.models import Album
 from spotibot.apps.artist.models import Artist
+from spotibot.apps.base.models import BaseModel
 
 
 class Track(BaseModel):

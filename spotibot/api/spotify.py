@@ -4,7 +4,6 @@ from django.conf import settings
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 
-
 scopes = [
     "playlist-modify-private",
     "playlist-modify-public",
@@ -24,11 +23,11 @@ client = Spotify(
 )
 
 
-def get_history():
+def get_user_history():
     return client.current_user_recently_played()
 
 
-def get_saved_tracks(limit: int = 10):
+def get_user_saved_tracks(limit: int = 10):
     return client.current_user_saved_tracks(limit=limit)
 
 

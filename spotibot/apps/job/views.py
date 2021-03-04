@@ -1,7 +1,7 @@
 import logging
 
-from django.http.response import JsonResponse
 from django.conf import settings
+from django.http.response import JsonResponse
 from rest_framework.generics import GenericAPIView
 
 from spotibot.api import spotify
@@ -23,7 +23,7 @@ class HistoryJobView(GenericAPIView):
     def get(self, _):
         tracks = []
 
-        for data in spotify.get_history()["items"]:
+        for data in spotify.get_user_history()["items"]:
             history = History.parse(data)
             tracks.append(history.track)
 
