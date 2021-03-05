@@ -11,6 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 SECRET_KEY = "%q4mbg=fet*^adhty1q$-bp!9&4+y!9+c)0u*s=_ury*qg#11f"
 
+API_KEY = "IU48O3IYMra2u6J"
+
 SPOTIFY = {
     "USERNAME": "",
     "CLIENT_ID": "",
