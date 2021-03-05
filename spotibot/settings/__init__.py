@@ -16,6 +16,7 @@ SPOTIFY = {
     "CLIENT_ID": "",
     "CLIENT_SECRET": "",
     "PLAYLISTS": {
+        "DISCOVER": "",
         "HISTORY": "",
     },
 }
@@ -37,6 +38,36 @@ SWAGGER_SETTINGS = {
     "DOC_EXPANSION": "none",
     "TAGS_SORTER": "alpha",
     "USE_SESSION_AUTH": False,
+}
+
+LOG_LEVEL = "INFO"
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {
+            "format": "[%(levelname)s][%(asctime)s] > %(message)s",
+        },
+    },
+    "handlers": {
+        "console": {
+            "level": LOG_LEVEL,
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": LOG_LEVEL,
+        "propagate": False,
+    },
+    "loggers": {
+        "django.server": {
+            "handlers": ["console"],
+            "level": LOG_LEVEL,
+            "propagate": False,
+        }
+    },
 }
 
 
