@@ -20,12 +20,16 @@ class Album(BaseModel):
 
     @property
     def tracks(self):
+        from spotibot.apps.track.models import Track
 
         ids = list(
-            map(lambda track: track["id"], client.album_tracks(self.id)["items"])
+            map(lambda track: track["id"], client.album_tracks(self.id)["items"]),
         )
 
-        return [client.tracks(ids)["tracks"]]
+        return sorted(
+            list(map(Track.parse, client.tracks(ids)["tracks"])),
+            key=lambda track: track.number,
+        )
 
     def __str__(self):
         return f"{self.name} by {self.artist.name}"

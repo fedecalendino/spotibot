@@ -13,21 +13,33 @@ DISCOVER_PLAYLIST_ID = settings.SPOTIFY["PLAYLISTS"]["DISCOVER"]
 
 
 def run() -> list[Track]:
-    tracks = []
+    artists = []
+    tracks = {}
 
     for data in api.get_user_saved_tracks(limit=10)["items"]:
         track = Track.parse(data["track"])
-        tracks.append(track)
+        tracks[track.id] = track
+
+        artists.append(track.artist)
+
+        album_tracks = sorted(
+            track.album.tracks,
+            key=lambda tr: tr.popularity,
+            reverse=True,
+        )
+
+        for album_track in album_tracks[:3]:
+            tracks[album_track.id] = album_track
 
     api.update_playlist(
         DISCOVER_PLAYLIST_ID,
-        items=map(lambda item: item.uri, tracks),
+        items=tracks.keys(),
         clear=True,
     )
 
     api.change_playlist_details(
         DISCOVER_PLAYLIST_ID,
-        description=f"{'; '.join(map(lambda item: item.name, tracks))}. Updated at {util.timestamp()}",
+        description=f"{'; '.join(map(lambda artist: artist.name, artists))}. Updated at {util.timestamp()}",
     )
 
-    return tracks
+    return tracks.values()
