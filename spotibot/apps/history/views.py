@@ -1,6 +1,5 @@
-import logging
 import json
-from uuid import uuid4
+import logging
 
 from django.http.response import JsonResponse
 from rest_framework.generics import (
@@ -8,8 +7,6 @@ from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView,
 )
-
-from spotibot.apps.models import Album, Artist, Track
 
 from .models import History
 from .serializers import HistorySerializer
