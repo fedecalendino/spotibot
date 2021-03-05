@@ -39,7 +39,7 @@ def run() -> list[Track]:
 
     api.change_playlist_details(
         DISCOVER_PLAYLIST_ID,
-        description=f"{'; '.join(map(lambda artist: artist.name, artists))}. Updated at {util.timestamp()}",
+        description=f"Discover new songs based on liked songs. Updated at {util.timestamp()}",
     )
 
     return tracks.values()
