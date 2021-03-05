@@ -3,7 +3,6 @@ import logging
 from django.conf import settings
 
 from spotibot.apps.history.models import History
-
 from spotibot.spotify import api
 from spotibot.spotify import util
 
@@ -20,7 +19,7 @@ def run() -> list[History]:
         history = History.parse(data)
         items.append(history)
 
-    api.replace_playlist(
+    api.update_playlist(
         HISTORY_PLAYLIST_ID,
         items=map(lambda item: item.track.uri, items),
     )

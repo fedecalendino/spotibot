@@ -1,6 +1,10 @@
+import logging
+
 from django.db import models
 
 from spotibot.apps.base.models import BaseModel
+
+logger = logging.getLogger(__name__)
 
 
 class Artist(BaseModel):
@@ -15,11 +19,16 @@ class Artist(BaseModel):
 
     @classmethod
     def parse(cls, data: dict) -> "Artist":
-        artist, _ = Artist.objects.all().get_or_create(
-            id=data["id"],
-            name=data["name"],
-            uri=data["uri"],
-        )
-        artist.save()
+        try:
+            artist = Artist.objects.all().get(id=data["id"])
+        except Artist.DoesNotExist:
+            artist = Artist(
+                id=data["id"],
+                name=data["name"],
+                uri=data["uri"],
+            )
+            artist.save()
+
+            logger.info("Added new artist: %s", artist)
 
         return artist

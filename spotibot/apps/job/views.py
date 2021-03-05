@@ -10,7 +10,8 @@ logger = logging.getLogger(__name__)
 
 class DiscoverJobView(GenericAPIView):
     def get(self, _):
-        pass
+        items = jobs.discover.run()
+        return JsonResponse(data={"items": list(map(str, items))})
 
 
 class HistoryJobView(GenericAPIView):
