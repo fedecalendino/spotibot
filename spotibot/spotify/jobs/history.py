@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 from django.conf import settings
 
@@ -12,7 +13,7 @@ logger = logging.getLogger(__name__)
 HISTORY_PLAYLIST_ID = settings.SPOTIFY["PLAYLISTS"]["HISTORY"]
 
 
-def run() -> list[History]:
+def run() -> List[History]:
     items = []
 
     for data in api.get_user_history()["items"]:

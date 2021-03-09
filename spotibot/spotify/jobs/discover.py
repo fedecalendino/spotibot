@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 from django.conf import settings
 
@@ -12,7 +13,7 @@ logger = logging.getLogger(__name__)
 DISCOVER_PLAYLIST_ID = settings.SPOTIFY["PLAYLISTS"]["DISCOVER"]
 
 
-def run() -> list[Track]:
+def run() -> List[Track]:
     artists = []
     tracks = {}
 
