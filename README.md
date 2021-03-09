@@ -18,13 +18,13 @@
 * Add job for weeklys playlist update. (every sunday at 23:59)
 * ~~Add service to inject history elements.~~
 * ~~Add settings for prod.~~
-* Add configuration for supervisor.
+* ~~Add configuration for supervisor.~~
 * ~~Add jenkins job for deploy~~.
 * Add github hook for jenkins deploy.
-* Add spotibot user/database to prod.
+* ~~Add spotibot user/database to prod.~~
 * Add cron jobs for jobs.
 * Add fail2ban config.
-
+* Add slack notifications.
 
 
 History Job:
@@ -35,21 +35,3 @@ Discover Job:
 
 Weeklys 2021 Job:
   * Get most played song from each week, save each top 3 into the weeklys playlist.
-
-
-Prod Settings:
-
-* DATABASE_NAME
-* DATABASE_USER
-* DATABASE_PASSWORD
-* DATABASE_HOST
-* DATABASE_PORT
-
-* DEBUG
-* LOG_LEVEL
-
-* SPOTIFY_USERNAME
-* SPOTIFY_CLIENT_ID
-* SPOTIFY_CLIENT_SECRET
-* SPOTIFY_PLAYLISTS_DISCOVER
-* SPOTIFY_PLAYLISTS_HISTORY
