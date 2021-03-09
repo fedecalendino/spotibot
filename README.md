@@ -17,7 +17,7 @@
 * ~~Add job for discover playlist update.~~ (every hour)
 * Add job for weeklys playlist update. (every sunday at 23:59)
 * ~~Add service to inject history elements.~~
-* Add settings for prod.
+* ~~Add settings for prod.~~
 * Add configuration for supervisor.
 * ~~Add jenkins job for deploy~~.
 * Add github hook for jenkins deploy.

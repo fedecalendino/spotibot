@@ -2,35 +2,44 @@
 
 import os
 from pathlib import Path
+from configparser import ConfigParser
 
+
+# Config ======================================================================
+
+config = ConfigParser()
+config.read("/etc/spotibot/config.ini")
 
 # Settings ====================================================================
 
 ALLOWED_HOSTS = ["*"]
 BASE_DIR = Path(__file__).resolve().parent.parent
-DEBUG = True
 SECRET_KEY = "%q4mbg=fet*^adhty1q$-bp!9&4+y!9+c)0u*s=_ury*qg#11f"
 
-API_KEY = "IU48O3IYMra2u6J"
+API_KEY = config["SPOTIBOT"]["API_KEY"]
+DEBUG = config["SPOTIBOT"].get("DEBUG", "false") == "true"
+LOG_LEVEL = config["SPOTIBOT"].get("LOG_LEVEL", "INFO")
+VERSION = config["SPOTIBOT"]["VERSION"]
+
 
 SPOTIFY = {
-    "USERNAME": "",
-    "CLIENT_ID": "",
-    "CLIENT_SECRET": "",
+    "USERNAME": config["SPOTIFY"]["USERNAME"],
+    "CLIENT_ID": config["SPOTIFY"]["CLIENT_ID"],
+    "CLIENT_SECRET": config["SPOTIFY"]["CLIENT_SECRET"],
     "PLAYLISTS": {
-        "DISCOVER": "",
-        "HISTORY": "",
+        "DISCOVER": config["PLAYLISTS"]["DISCOVER"],
+        "HISTORY": config["PLAYLISTS"]["HISTORY"],
     },
 }
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "spotibot",
-        "USER": "spotibot",
-        "PASSWORD": "password",
-        "HOST": "localhost",
-        "PORT": 5432,
+        "NAME": config["DATABASE"]["NAME"],
+        "USER": config["DATABASE"]["USER"],
+        "PASSWORD": config["DATABASE"]["PASSWORD"],
+        "HOST": config["DATABASE"]["HOST"],
+        "PORT": int(config["DATABASE"]["PORT"]),
     }
 }
 
@@ -42,7 +51,6 @@ SWAGGER_SETTINGS = {
     "USE_SESSION_AUTH": False,
 }
 
-LOG_LEVEL = "INFO"
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -139,3 +147,10 @@ USE_L10N = True
 USE_TZ = True
 
 TIMESTAMPS_TIMEZONE = "Europe/Prague"
+
+
+# Finish ======================================================================
+print(f"Loaded settings {VERSION}")
+print(f" * DEBUG = {DEBUG}")
+print(f" * LOG_LEVEL = {LOG_LEVEL}")
+print(f" * USERNAME = {SPOTIFY['USERNAME']}")
