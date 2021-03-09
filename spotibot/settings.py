@@ -10,6 +10,7 @@ from configparser import ConfigParser
 config = ConfigParser()
 config.read("/etc/spotibot/config.ini")
 
+
 # Settings ====================================================================
 
 ALLOWED_HOSTS = ["*"]
@@ -112,7 +113,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SPOTIBOT_APPS
 
 ROOT_URLCONF = "spotibot.urls"
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR.parent, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 WSGI_APPLICATION = "spotibot.wsgi.application"
 
 MIDDLEWARE = [
