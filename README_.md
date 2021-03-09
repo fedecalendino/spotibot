@@ -35,3 +35,21 @@ Discover Job:
 
 Weeklys 2021 Job:
   * Get most played song from each week, save each top 3 into the weeklys playlist.
+
+
+Prod Settings:
+
+* DATABASE_NAME
+* DATABASE_USER
+* DATABASE_PASSWORD
+* DATABASE_HOST
+* DATABASE_PORT
+
+* DEBUG
+* LOG_LEVEL
+
+* SPOTIFY_USERNAME
+* SPOTIFY_CLIENT_ID
+* SPOTIFY_CLIENT_SECRET
+* SPOTIFY_PLAYLISTS_DISCOVER
+* SPOTIFY_PLAYLISTS_HISTORY
