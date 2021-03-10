@@ -11,7 +11,7 @@ class Artist(BaseModel):
     class Meta:
         db_table = "models_artists"
 
-    name = models.CharField(max_length=100)
+    name = models.TextField()
     uri = models.CharField(max_length=100, unique=True)
 
     def __str__(self):

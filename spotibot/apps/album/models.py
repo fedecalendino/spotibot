@@ -13,7 +13,7 @@ class Album(BaseModel):
     class Meta:
         db_table = "models_albums"
 
-    name = models.CharField(max_length=100)
+    name = models.TextField()
     uri = models.CharField(max_length=100, unique=True)
 
     artist = models.ForeignKey(Artist, on_delete=models.DO_NOTHING)

@@ -13,7 +13,7 @@ class Track(BaseModel):
     class Meta:
         db_table = "models_tracks"
 
-    name = models.CharField(max_length=100)
+    name = models.TextField()
     number = models.IntegerField(default=0)
     popularity = models.IntegerField(default=0)
     uri = models.CharField(

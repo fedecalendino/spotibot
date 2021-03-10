@@ -18,7 +18,7 @@ client = Spotify(
         client_secret=settings.SPOTIFY["CLIENT_SECRET"],
         scope="playlist-modify-public,playlist-modify-private,user-library-read,user-read-recently-played",
         redirect_uri="https://localhost:8080",
-        cache_handler=CacheFileHandler(cache_path=str(Path.home() / ".spotify"))
+        cache_handler=CacheFileHandler(cache_path=str(Path.home() / ".spotify")),
     )
 )
 
