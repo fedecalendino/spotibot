@@ -17,23 +17,17 @@ DISCOVER_PLAYLIST_ID = settings.SPOTIFY["PLAYLISTS"]["DISCOVER"]
 
 @slack.notify
 def run() -> List[Track]:
-    artists = []
     tracks = {}
 
     for data in api.get_user_saved_tracks(limit=10)["items"]:
         track = Track.parse(data["track"])
-        tracks[track.id] = track
 
-        artists.append(track.artist)
+        for artist_track in track.artist.top_tracks[:3]:
+            tracks[artist_track.id] = artist_track
 
-        album_tracks = sorted(
-            track.album.tracks,
-            key=lambda tr: tr.popularity,
-            reverse=True,
-        )
-
-        for album_track in album_tracks[:3]:
-            tracks[album_track.id] = album_track
+        for featured in track.features.all():
+            for featured_track in featured.top_tracks[:1]:
+                tracks[featured_track.id] = featured_track
 
     api.update_playlist(
         DISCOVER_PLAYLIST_ID,

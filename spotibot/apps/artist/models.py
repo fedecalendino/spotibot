@@ -3,6 +3,7 @@ import logging
 from django.db import models
 
 from spotibot.apps.base.models import BaseModel
+from spotibot.spotify.api import client
 
 logger = logging.getLogger(__name__)
 
@@ -16,6 +17,12 @@ class Artist(BaseModel):
 
     def __str__(self):
         return f"{self.name}"
+
+    @property
+    def top_tracks(self):
+        from spotibot.apps.track.models import Track
+
+        return list(map(Track.parse, client.artist_top_tracks(self.id)["tracks"]))
 
     @classmethod
     def parse(cls, data: dict) -> "Artist":
