@@ -1,5 +1,8 @@
 import logging
+from typing import List
 
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import BaseFilterBackend, OrderingFilter, SearchFilter
 from rest_framework.generics import GenericAPIView
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
@@ -13,6 +16,18 @@ class TrackCollectionView(ListCreateAPIView):
     queryset = Track.objects.all()
     serializer_class = TrackSerializer
     permission_classes = [GenericAPIView]
+
+    ordering_fields = ["name"]
+    search_fields = ["name"]
+    filterset_fields = {
+        "name": ["exact"],
+        "artist__name": ["exact"],
+        "album__name": ["exact"],
+    }
+
+    @property
+    def filter_backends(self) -> List[BaseFilterBackend]:
+        return [DjangoFilterBackend, SearchFilter, OrderingFilter]
 
 
 class TrackEntityView(RetrieveUpdateDestroyAPIView):
