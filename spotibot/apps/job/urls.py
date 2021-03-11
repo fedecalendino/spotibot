@@ -18,4 +18,9 @@ urlpatterns = [
         view=views.WeekliesJobView.as_view(),
         name="weeklies_job_view",
     ),
+    path(
+        route="update",
+        view=views.UpdateJobView.as_view(),
+        name="update_job_view",
+    ),
 ]

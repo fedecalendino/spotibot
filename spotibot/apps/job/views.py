@@ -31,3 +31,11 @@ class WeekliesJobView(GenericAPIView):
     def get(self, _):
         items = jobs.weeklies.run()
         return JsonResponse(data={"items": list(map(str, items))})
+
+
+class UpdateJobView(GenericAPIView):
+    permission_classes = [ValidateApiKey]
+
+    def get(self, _):
+        jobs.update.run()
+        return JsonResponse(data={})

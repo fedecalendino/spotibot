@@ -14,8 +14,10 @@ class Track(BaseModel):
         db_table = "models_tracks"
 
     name = models.TextField()
+    duration = models.IntegerField(default=0)
     number = models.IntegerField(default=0)
     popularity = models.IntegerField(default=0)
+
     uri = models.CharField(
         max_length=100,
         unique=True,
@@ -40,6 +42,7 @@ class Track(BaseModel):
                 name=data["name"],
                 popularity=data.get("popularity", 0),
                 number=data.get("track_number", 0),
+                duration=data.get("duration_ms", 0),
                 uri=data["uri"],
                 artist=Artist.parse(artist),
                 album=Album.parse(data["album"]),
