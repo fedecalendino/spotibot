@@ -7,12 +7,15 @@ from spotibot.apps.history.models import History
 from spotibot.spotify import api
 from spotibot.spotify import util
 
+from . import slack
+
 logger = logging.getLogger(__name__)
 
 
 HISTORY_PLAYLIST_ID = settings.SPOTIFY["PLAYLISTS"]["HISTORY"]
 
 
+@slack.notify
 def run() -> List[History]:
     items = []
 

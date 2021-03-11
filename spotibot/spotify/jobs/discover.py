@@ -7,12 +7,15 @@ from spotibot.apps.track.models import Track
 from spotibot.spotify import api
 from spotibot.spotify import util
 
+from . import slack
+
 logger = logging.getLogger(__name__)
 
 
 DISCOVER_PLAYLIST_ID = settings.SPOTIFY["PLAYLISTS"]["DISCOVER"]
 
 
+@slack.notify
 def run() -> List[Track]:
     artists = []
     tracks = {}

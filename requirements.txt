@@ -3,4 +3,5 @@ django-filter
 djangorestframework
 drf-yasg
 psycopg2-binary
+slack-webhook
 spotipy

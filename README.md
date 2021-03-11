@@ -20,7 +20,7 @@
 * ~~Add configuration for supervisor.~~
 * ~~Add jenkins job for deploy~~.
 * ~~Add spotibot user/database to prod.~~
-* Add slack notifications.
+* ~~Add slack notifications~~.
 * Add cron jobs for jobs.
 * Add heartbeat app (🌿 yahaha).
 * Add github hook for jenkins deploy.

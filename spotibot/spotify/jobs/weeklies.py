@@ -10,13 +10,16 @@ from spotibot.apps.history.models import History
 from spotibot.spotify import api
 from spotibot.spotify import util
 
+from . import slack
+
 logger = logging.getLogger(__name__)
 
 
-WEEKLIES_PLAYLIST_ID = settings.SPOTIFY["PLAYLISTS"]["WEEKLIES"]
 TOP = 3
+WEEKLIES_PLAYLIST_ID = settings.SPOTIFY["PLAYLISTS"]["WEEKLIES"]
 
 
+@slack.notify
 def run() -> List[str]:
     items = []
 

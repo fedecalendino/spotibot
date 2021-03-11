@@ -21,6 +21,7 @@ API_KEY = config["SPOTIBOT"]["API_KEY"]
 DEBUG = config["SPOTIBOT"].get("DEBUG", "false") == "true"
 LOG_LEVEL = config["SPOTIBOT"].get("LOG_LEVEL", "INFO")
 VERSION = config["SPOTIBOT"]["VERSION"]
+SLACK_WEBHOOK_URL = config["SPOTIBOT"]["SLACK_WEBHOOK_URL"]
 
 
 SPOTIFY = {
