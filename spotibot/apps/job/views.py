@@ -23,3 +23,11 @@ class HistoryJobView(GenericAPIView):
     def get(self, _):
         items = jobs.history.run()
         return JsonResponse(data={"items": list(map(str, items))})
+
+
+class WeekliesJobView(GenericAPIView):
+    permission_classes = [ValidateApiKey]
+
+    def get(self, _):
+        items = jobs.weeklies.run()
+        return JsonResponse(data={"items": list(map(str, items))})

@@ -1,16 +1,21 @@
 from django.urls import path
 
-from .views import DiscoverJobView, HistoryJobView
+from . import views
 
 urlpatterns = [
     path(
         route="discover",
-        view=DiscoverJobView.as_view(),
+        view=views.DiscoverJobView.as_view(),
         name="discover_job_view",
     ),
     path(
         route="history",
-        view=HistoryJobView.as_view(),
+        view=views.HistoryJobView.as_view(),
         name="history_job_view",
+    ),
+    path(
+        route="weeklies",
+        view=views.WeekliesJobView.as_view(),
+        name="weeklies_job_view",
     ),
 ]

@@ -30,6 +30,9 @@ SPOTIFY = {
     "PLAYLISTS": {
         "DISCOVER": config["PLAYLISTS"]["DISCOVER"],
         "HISTORY": config["PLAYLISTS"]["HISTORY"],
+        "WEEKLIES": {
+            "2021": config["PLAYLISTS"]["WEEKLIES_2021"],
+        },
     },
 }
 
@@ -139,9 +142,9 @@ TEMPLATES = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
-    'MAX_PAGE_SIZE': 50,
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
+    "MAX_PAGE_SIZE": 50,
 }
 
 # Internationalization ========================================================
