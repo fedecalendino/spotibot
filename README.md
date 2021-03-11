@@ -21,7 +21,7 @@
 * ~~Add jenkins job for deploy~~.
 * ~~Add spotibot user/database to prod.~~
 * ~~Add slack notifications~~.
-* Add cron jobs for jobs.
+* Add cron jobs in jenkins.
+* Trigger deploy on push / slack notification.
 * Add heartbeat app (🌿 yahaha).
-* Add github hook for jenkins deploy.
 * Add fail2ban config.
