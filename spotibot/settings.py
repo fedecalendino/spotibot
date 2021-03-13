@@ -105,7 +105,6 @@ SPOTIBOT_APPS = [
     "spotibot.apps.album",
     "spotibot.apps.artist",
     "spotibot.apps.history",
-    "spotibot.apps.job",
     "spotibot.apps.track",
 ]
 

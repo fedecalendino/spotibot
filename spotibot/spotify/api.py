@@ -31,8 +31,13 @@ def get_user_saved_tracks(limit: int = 10):
     return client.current_user_saved_tracks(limit=limit)
 
 
-def change_playlist_details(playlist_id: str, description: str):
-    client.playlist_change_details(playlist_id, description=f"🤖️ · {description}")
+def change_playlist_details(
+    playlist_id: str, title: str = None, description: str = None
+):
+    if description:
+        description = f"🤖️ · {description}"
+
+    client.playlist_change_details(playlist_id, name=title, description=description)
 
 
 def clear_playlist(playlist_id: str):
