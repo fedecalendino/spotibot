@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 class Track(BaseModel):
     class Meta:
-        db_table = "models_tracks"
+        db_table = "tracks"
 
     name = models.TextField()
     duration = models.IntegerField(default=0)

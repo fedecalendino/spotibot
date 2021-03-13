@@ -8,7 +8,7 @@ from spotibot.apps.track.models import Track
 
 class History(BaseModel):
     class Meta:
-        db_table = "models_history"
+        db_table = "history"
 
     played_at = models.DateTimeField(unique=True)
     raw = models.JSONField()

@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 class Album(BaseModel):
     class Meta:
-        db_table = "models_albums"
+        db_table = "albums"
 
     name = models.TextField()
     uri = models.CharField(max_length=100, unique=True)

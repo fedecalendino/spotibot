@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 class Artist(BaseModel):
     class Meta:
-        db_table = "models_artists"
+        db_table = "artists"
 
     name = models.TextField()
     uri = models.CharField(max_length=100, unique=True)
