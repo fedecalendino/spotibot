@@ -20,11 +20,11 @@ def run() -> List[Track]:
     for data in api.get_user_saved_tracks(limit=10)["items"]:
         track = Track.parse(data["track"])
 
-        for artist_track in track.artist.top_tracks[:3]:
+        for artist_track in track.artist.top_tracks[:5]:
             tracks[artist_track.id] = artist_track
 
         for featured in track.features.all():
-            for featured_track in featured.top_tracks[:1]:
+            for featured_track in featured.top_tracks[:3]:
                 tracks[featured_track.id] = featured_track
 
     api.update_playlist(
